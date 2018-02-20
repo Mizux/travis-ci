@@ -9,8 +9,7 @@ matrix:
     - os: osx
       compiler: gcc
 
-install:
-  - echo "install done"
+install: true
 
 script:
   - env
