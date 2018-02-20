@@ -1,0 +1,22 @@
+sudo: required
+language: cpp
+
+matrix:
+  include:
+    - os: linux
+      dist: trusty
+      compiler: gcc
+    - os: osx
+      compiler: gcc
+
+install:
+  - ./.travis/install.sh
+
+script:
+  - git --version
+  - make --version
+  - cmake --version
+  - which java
+  - ls /usr/lib/jvm/*/bin
+  - ls -l /usr/lib/jvm/default-java
+
