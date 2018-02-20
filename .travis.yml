@@ -13,9 +13,10 @@ install:
   - echo "install done"
 
 script:
+  - env
   - make --version
   - cmake --version
-  - which java
+  - which java | xargs ls -l
   - ls /usr/lib/jvm/*/bin
-  - ls -l /usr/lib/jvm/default-java
+  - which dotnet && (which dotnet | xargs ls -l )
 
