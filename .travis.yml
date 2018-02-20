@@ -10,10 +10,9 @@ matrix:
       compiler: gcc
 
 install:
-  - ./.travis/install.sh
+  - echo "install done"
 
 script:
-  - git --version
   - make --version
   - cmake --version
   - which java
