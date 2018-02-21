@@ -9,13 +9,15 @@ matrix:
     - os: osx
       compiler: gcc
 
-install: true
+install:
+  - sudo apt-get install -yqq mono-complete
 
 script:
   - env
   - make --version
   - cmake --version
-  - which java | xargs ls -l
-  - ls /usr/lib/jvm/*/bin
-  - which dotnet && (which dotnet | xargs ls -l )
+  - which java | xargs ls -l | xargs ls -l || true
+  - ls -l /usr/lib/jvm/*
+  - which dotnet && (which dotnet | xargs ls -l ) || true
+  - which csharp && (which csharp | xargs ls -l ) || true
 
