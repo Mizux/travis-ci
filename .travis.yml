@@ -12,6 +12,8 @@ matrix:
 install:
   - if [ $TRAVIS_OS_NAME == linux ];then sudo apt-get install -yqq mono-complete; fi
   - if [ $TRAVIS_OS_NAME == osx ];then brew update; fi
+  # get readlinks on osx
+  - if [ $TRAVIS_OS_NAME == osx ];then brew cask install coreutils; fi
   - if [ $TRAVIS_OS_NAME == osx ];then brew cask install java; fi
   - if [ $TRAVIS_OS_NAME == osx ];then brew install mono; fi
 
@@ -20,10 +22,9 @@ script:
   - make --version
   - cmake --version
 
-  - if [ $TRAVIS_OS_NAME == linux ];then which java | xargs ls -l | xargs ls -l; fi
+  - if [ $TRAVIS_OS_NAME == linux ];then which java && which java | xargs readlink -f; fi
   - if [ $TRAVIS_OS_NAME == linux ];then ls -l /usr/lib/jvm/*; fi
-  - if [ $TRAVIS_OS_NAME == osx ]; then which java | xargs ls -l; fi
+  - if [ $TRAVIS_OS_NAME == osx ]; then which java && wich java | xargs readlink -f; fi
 
-  - which dotnet && (which dotnet | xargs ls -l )
-  - which csharp && (which csharp | xargs ls -l )
-
+  - which dotnet && which dotnet | xargs readlink -f
+  - which csharp && which csharp | xargs readlink -f
