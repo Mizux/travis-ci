@@ -12,8 +12,8 @@ matrix:
 install:
   - if [ $TRAVIS_OS_NAME == linux ];then sudo apt-get install -yqq mono-complete; fi
   - if [ $TRAVIS_OS_NAME == osx ];then brew update; fi
-  # get readlinks on osx
-  - if [ $TRAVIS_OS_NAME == osx ];then brew install coreutils; fi
+  #  [Already installed] Get readlinks etc on osx
+  #- if [ $TRAVIS_OS_NAME == osx ];then brew install coreutils; fi
   - if [ $TRAVIS_OS_NAME == osx ];then brew cask install java; fi
   - if [ $TRAVIS_OS_NAME == osx ];then brew install mono; fi
 
