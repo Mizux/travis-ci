@@ -26,6 +26,10 @@ script:
   - if [ $TRAVIS_OS_NAME == linux ];then ls -l /usr/lib/jvm/*; fi
   - if [ $TRAVIS_OS_NAME == osx ]; then which java && wich java | xargs readlink -f; fi
 
-  - which mono && which mono | xargs readlink -f
-  - which mcs && which mcs | xargs readlink -f
-  - which csharp && which csharp | xargs readlink -f
+  - if [ $TRAVIS_OS_NAME == linux ];then which mono && which mono | xargs readlink -f; fi
+  - if [ $TRAVIS_OS_NAME == linux ];then which csharp && which csharp | xargs readlink -f; fi
+  - if [ $TRAVIS_OS_NAME == linux ];then which mcs && which mcs | xargs readlink -f; fi
+  - if [ $TRAVIS_OS_NAME == osx ];then which mono && which mono | xargs readlink; fi
+  - if [ $TRAVIS_OS_NAME == osx ];then which csharp && which csharp | xargs readlink; fi
+  - if [ $TRAVIS_OS_NAME == osx ];then which mcs && which mcs | xargs readlink; fi
+  - mcs --version
