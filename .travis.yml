@@ -10,14 +10,20 @@ matrix:
       compiler: gcc
 
 install:
-  - sudo apt-get install -yqq mono-complete
+  - if [ $TRAVIS_OS_NAME == linux ];then sudo apt-get install -yqq mono-complete; fi
+  - if [ $TRAVIS_OS_NAME == osx ];then brew update; fi
+  - if [ $TRAVIS_OS_NAME == osx ];then brew cask install java; fi
+  - if [ $TRAVIS_OS_NAME == osx ];then brew install mono; fi
 
 script:
   - env
   - make --version
   - cmake --version
-  - which java | xargs ls -l | xargs ls -l || true
-  - ls -l /usr/lib/jvm/*
-  - which dotnet && (which dotnet | xargs ls -l ) || true
-  - which csharp && (which csharp | xargs ls -l ) || true
+
+  - if [ $TRAVIS_OS_NAME == linux ];then which java | xargs ls -l | xargs ls -l; fi
+  - if [ $TRAVIS_OS_NAME == linux ];then ls -l /usr/lib/jvm/*; fi
+  - if [ $TRAVIS_OS_NAME == osx ]; then which java | xargs ls -l; fi
+
+  - which dotnet && (which dotnet | xargs ls -l )
+  - which csharp && (which csharp | xargs ls -l )
 
