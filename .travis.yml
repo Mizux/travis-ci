@@ -1,42 +1,50 @@
-sudo: required
 language: cpp
+
+git:
+  depth: false
+  quiet: true
+  submodules: false
 
 matrix:
   include:
     - os: linux
+      dist: precise
+      compiler: gcc
+    - os: linux
       dist: trusty
       compiler: gcc
+    - os: linux
+      dist: xenial
+      compiler: gcc
+
     - os: osx
       compiler: gcc
 
-install:
+    - os: windows
+
+before_script:
   - |
-    if [ $TRAVIS_OS_NAME == linux ];then
-    # http://www.mono-project.com/download/stable/
-    sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF &&
-    echo "deb http://download.mono-project.com/repo/ubuntu stable-trusty main" | sudo tee /etc/apt/sources.list.d/mono-official-stable.list &&
-    sudo apt-get update -qq &&
-    sudo apt-get install -yqq mono-complete
+    if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == linux ]]; then
+     env
+     make --version
+     cmake --version
     fi
-  - if [ $TRAVIS_OS_NAME == osx ];then brew update; fi
-  #  [Already installed] Get readlinks etc on osx
-  #- if [ $TRAVIS_OS_NAME == osx ];then brew install coreutils; fi
-  - if [ $TRAVIS_OS_NAME == osx ];then brew cask install java; fi
-  - if [ $TRAVIS_OS_NAME == osx ];then brew install mono; fi
+  - |
+    if [[ $TRAVIS_OS_NAME == windows ]]; then
+     set
+     make --version
+     cmake --version
+    fi
 
 script:
-  - env
-  - make --version
-  - cmake --version
-
-  - if [ $TRAVIS_OS_NAME == linux ];then which java && which java | xargs readlink -f; fi
-  - if [ $TRAVIS_OS_NAME == linux ];then ls -l /usr/lib/jvm/*; fi
-  - if [ $TRAVIS_OS_NAME == osx ]; then which java && wich java | xargs readlink -f; fi
-
-  - if [ $TRAVIS_OS_NAME == linux ];then which mono && which mono | xargs readlink -f; fi
-  - if [ $TRAVIS_OS_NAME == linux ];then which csharp && which csharp | xargs readlink -f; fi
-  - if [ $TRAVIS_OS_NAME == linux ];then which mcs && which mcs | xargs readlink -f; fi
-  - if [ $TRAVIS_OS_NAME == osx ];then which mono && which mono | xargs readlink; fi
-  - if [ $TRAVIS_OS_NAME == osx ];then which csharp && which csharp | xargs readlink; fi
-  - if [ $TRAVIS_OS_NAME == osx ];then which mcs && which mcs | xargs readlink; fi
-  - mcs --version
+  - |
+    if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == linux ]]; then
+      git --version || true
+      git-lfs --version || true
+      hg --version || true
+      svn --version || true
+    fi
+  - |
+    if [ $TRAVIS_OS_NAME == osx ];then
+      brew --version || true
+    fi
