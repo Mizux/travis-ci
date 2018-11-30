@@ -39,10 +39,10 @@ before_script:
 script:
   - |
     if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == linux ]]; then
-      git --version || true
-      git-lfs --version || true
-      hg --version || true
-      svn --version || true
+      git --version | grep version || true
+      git lfs || true
+      hg --version | grep version || true
+      svn --version | grep version || true
     fi
   - |
     if [ $TRAVIS_OS_NAME == osx ];then
