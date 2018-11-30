@@ -31,6 +31,7 @@ before_script:
     if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == osx ]]; then
      make --version || true
      cmake --version | grep version || true
+    fi
   - |
     if [[ $TRAVIS_OS_NAME == windows ]]; then
      set
