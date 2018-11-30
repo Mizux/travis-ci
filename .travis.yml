@@ -23,10 +23,8 @@ matrix:
     - os: windows
 
 before_script:
-  - |
-    if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == osx ]]; then
-     env
-    fi
+  - if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == osx ]]; then env; fi
+  - if [[ $TRAVIS_OS_NAME == windows ]]; then set; fi
   - |
     if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == osx ]]; then
      make --version || true
@@ -34,14 +32,19 @@ before_script:
     fi
   - |
     if [[ $TRAVIS_OS_NAME == windows ]]; then
-     set
-     cmake --version
-     make --version
+     cmake --version | grep version || true
     fi
 
 script:
   - |
     if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == osx ]]; then
+      git --version | grep version || true
+      git lfs || true
+      hg --version | grep version || true
+      svn --version | grep "\<version\>" || true
+    fi
+  - |
+    if [[ $TRAVIS_OS_NAME == windows ]]; then
       git --version | grep version || true
       git lfs || true
       hg --version | grep version || true
