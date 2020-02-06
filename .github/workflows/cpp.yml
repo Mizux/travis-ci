@@ -1,0 +1,48 @@
+name: C++ CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: env
+      run: env
+    - name: CMake
+      run: cmake -version
+    - name: Make
+      run: make --version
+    - name: GCC
+      run: gcc --version
+    - name: G++
+      run: g++ --version
+    - name: Clang
+      run: clang --version
+
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: env
+      run: set
+    - name: CMake
+      run: cmake -version
+
+  build:
+    runs-on: osx-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: env
+      run: env
+    - name: CMake
+      run: cmake -version
+    - name: Make
+      run: make --version
+    - name: GCC
+      run: gcc --version
+    - name: G++
+      run: g++ --version
+    - name: Clang
+      run: clang --version
+
