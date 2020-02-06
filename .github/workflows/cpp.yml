@@ -3,7 +3,7 @@ name: C++ CI
 on: [push, pull_request]
 
 jobs:
-  build:
+  build-linux:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -20,7 +20,7 @@ jobs:
     - name: Clang
       run: clang --version
 
-  build:
+  build-windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
@@ -29,7 +29,7 @@ jobs:
     - name: CMake
       run: cmake -version
 
-  build:
+  build-osx:
     runs-on: osx-latest
     steps:
     - uses: actions/checkout@v2
