@@ -16,7 +16,10 @@ matrix:
     - os: linux
       dist: xenial
       compiler: gcc
-
+    - os: linux
+      dist: bionic
+      compiler: gcc
+      
     - os: osx
       compiler: gcc
 
@@ -33,6 +36,7 @@ before_script:
   - |
     if [[ $TRAVIS_OS_NAME == windows ]]; then
      cmake --version | grep version || true
+     cmake -G "" || true
     fi
 
 script:
