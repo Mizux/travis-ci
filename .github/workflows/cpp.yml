@@ -25,7 +25,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: env
-      run: Get-ChildItem Env:
+      run: "Get-ChildItem Env:"
     - name: CMake
       run: cmake -version
 
