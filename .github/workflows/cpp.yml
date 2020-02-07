@@ -19,6 +19,10 @@ jobs:
       run: g++ --version
     - name: Clang
       run: clang --version
+    - name: Python
+      run: python --version
+    - name: Python 3
+      run: python3 --version
 
   build-windows:
     runs-on: windows-latest
@@ -28,6 +32,10 @@ jobs:
       run: "Get-ChildItem Env:"
     - name: CMake
       run: cmake -version
+    - name: Python
+      run: python --version
+    - name: Python 3
+      run: python3 --version
 
   build-osx:
     runs-on: macos-latest
@@ -45,4 +53,8 @@ jobs:
       run: g++ --version
     - name: Clang
       run: clang --version
+    - name: Python
+      run: python --version
+    - name: Python 3
+      run: python3 --version
 
