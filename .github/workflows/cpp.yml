@@ -34,8 +34,6 @@ jobs:
       run: cmake -version
     - name: Python
       run: python --version
-    - name: Python 3
-      run: python3 --version
 
   build-osx:
     runs-on: macos-latest
