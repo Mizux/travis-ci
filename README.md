@@ -11,6 +11,7 @@
 # Reference
 * runners: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
+As of 2020/02/07:
 | cmd | Linux | Windows | MacOS |
 | :-- | -- | -- | -- |
 | CMake| 3.16.2 | 3.16.2 | 3.16.3 |
