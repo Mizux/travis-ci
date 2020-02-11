@@ -11,9 +11,9 @@
 # Reference
 * runners: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
-ubuntu-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#ubuntu-1804-lts
-windows-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#windows-server-2019
-macos-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#macos-1015
+* ubuntu-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#ubuntu-1804-lts
+* windows-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#windows-server-2019
+* macos-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#macos-1015
 
 
 As of 2020/02/07:
