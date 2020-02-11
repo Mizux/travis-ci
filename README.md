@@ -8,7 +8,7 @@
 [travis_link]: https://travis-ci.com/Mizux/travis-ci
 
 # Github Action runners
-# Reference
+## Reference
 * runners: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/virtual-environments-for-github-hosted-runners#supported-runners-and-hardware-resources
 
 * ubuntu-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#ubuntu-1804-lts
