@@ -19,11 +19,11 @@
 As of 2020/02/07:
 | cmd | Linux | Windows | MacOS |
 | :-- | -- | -- | -- |
-| CMake| 3.16.2 | 3.16.2 | 3.16.3 |
-| Gcc/G++| 7.4.0 | NA | Xcode 11.3.1 |
-| Clang| 7.4.0 | NA | 11.0.0 |
-| Python| 2.7.17 | 3.6.9 | 2.7.17 |
-| Python3| 3.6.9 | NA | 3.7.6 |
+| cmake| 3.16.2 | 3.16.2 | 3.16.3 |
+| gcc/g++| 7.4.0 | NA | Xcode 11.3.1 |
+| clang| 7.4.0 | NA | 11.0.0 |
+| python| 2.7.17 | 3.6.9 | 2.7.17 |
+| python3| 3.6.9 | NA | 3.7.6 |
 
 # Travis-CI
 ## Reference
