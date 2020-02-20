@@ -23,6 +23,8 @@ Just a sandbox project to reverse various runner configuration when using a `lan
 * windows-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#windows-server-2019
 * macos-latest: https://help.github.com/en/actions/reference/software-installed-on-github-hosted-runners#macos-1015
 
+note: each steps are independent, so env setting are forgotten.
+you'll need to use [`::set-env`](https://help.github.com/en/actions/reference/development-tools-for-github-actions#set-an-environment-variable-set-env) or [`::add-path`](https://help.github.com/en/actions/reference/development-tools-for-github-actions#add-a-system-path-add-path)
 
 As of 2020/02/07:
 | cmd | Linux | Windows | MacOS |
