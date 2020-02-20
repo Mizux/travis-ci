@@ -1,0 +1,19 @@
+version: '{build}'
+shallow_clone: true
+
+platform: x64
+
+environment:
+  matrix:
+  - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
+
+matrix:
+  fast_finish: false
+
+install:
+
+before_build:
+  - git --version
+
+build_script:
+  - cmake -version
