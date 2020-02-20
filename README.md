@@ -11,6 +11,9 @@
 [appveyor_status]: https://ci.appveyor.com/api/projects/status/sfsuy65vk2k0xkf6/branch/master?svg=true
 [appveyor_link]: https://ci.appveyor.com/project/Mizux/inspect-ci/branch/master
 
+# Introduction
+Just a sandbox project to reverse various runner configuration when using a `language:cpp` configuration.
+
 
 # Github Action runners
 ## Reference
@@ -37,8 +40,6 @@ As of 2020/02/07:
 * windows: https://docs.travis-ci.com/user/reference/windows/
 
 * cpp: https://docs.travis-ci.com/user/languages/cpp/
-
-Just sandbox project to reverse travis-ci VM configuration wgen using `language:cpp` configuration.
 
 # Appveyor CI
 ## Reference
