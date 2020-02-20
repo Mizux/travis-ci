@@ -64,5 +64,5 @@ jobs:
     - name: Python 3
       run: python3 --version
     - name: CPU Flags
-      run: sysctl -a | grep machdep.cpu.features | cut -f2 -d: | tr . _
+      run: "sysctl -a | grep machdep.cpu.features | cut -f2 -d: | tr . _"
 
