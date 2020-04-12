@@ -1,0 +1,14 @@
+name: Docker Windows
+
+on: [push, pull_request]
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker
+      run: docker version
+           docker info
+    - name: Build image
+      run: docker build -f win.Dockerfile .
