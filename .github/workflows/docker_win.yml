@@ -1,14 +1,37 @@
-name: Docker Windows
+name: Docker
 
 on: [push, pull_request]
 
 jobs:
-  build-windows:
+  Linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker version
+      run: docker version
+    - name: docker info
+      run: docker info
+    - name: Build image
+      run: docker build -f linux.Dockerfile .
+
+  Windows:
     runs-on: windows-latest
     steps:
     - uses: actions/checkout@v2
-    - name: docker
+    - name: docker version
       run: docker version
-           docker info
+    - name: docker info
+      run: docker info
     - name: Build image
       run: docker build -f win.Dockerfile .
+
+  MacOS:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker version
+      run: docker version
+    - name: docker info
+      run: docker info
+    - name: Build image
+      run: docker build -f osx.Dockerfile .
