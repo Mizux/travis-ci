@@ -49,7 +49,7 @@ script:
       svn --version | grep "\<version\>" || true
       cat /proc/cpuinfo | grep "flags" || true
       ls -l /usr/lib/jvm || true
-      echo $JAVA_HOME || true
+      echo "JAVA_HOME=$JAVA_HOME" || true
       ls -l $JAVA_HOME || true
     fi
   - |
