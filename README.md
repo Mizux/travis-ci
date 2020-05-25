@@ -2,11 +2,11 @@
 [![Build Status][travis_status]][travis_link]
 [![Build Status][appveyor_status]][appveyor_link]
 
-[github_status]: https://github.com/Mizux/travis-ci/workflows/C++%20CI/badge.svg
-[github_link]: https://github.com/Mizux/travis-ci/actions
+[github_status]: https://github.com/Mizux/inspect-ci/workflows/C++%20CI/badge.svg
+[github_link]: https://github.com/Mizux/inspect-ci/actions
 
-[travis_status]: https://travis-ci.com/Mizux/travis-ci.svg?branch=master
-[travis_link]: https://travis-ci.com/Mizux/travis-ci
+[travis_status]: https://travis-ci.com/Mizux/inspect-ci.svg?branch=master
+[travis_link]: https://travis-ci.com/Mizux/inspect-ci
 
 [appveyor_status]: https://ci.appveyor.com/api/projects/status/sfsuy65vk2k0xkf6/branch/master?svg=true
 [appveyor_link]: https://ci.appveyor.com/project/Mizux/inspect-ci/branch/master
