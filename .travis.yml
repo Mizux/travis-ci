@@ -42,11 +42,13 @@ before_script:
 script:
   - |
     if [[ $TRAVIS_OS_NAME == linux ]] || [[ $TRAVIS_OS_NAME == osx ]]; then
+      set -x
       git --version | grep version || true
-      git lfs || true
+      git lfs | grep "git-lfs" || true
       hg --version | grep version || true
       svn --version | grep "\<version\>" || true
       cat /proc/cpuinfo | grep "flags" || true
+      ls -R /usr/lib/jvm || true
     fi
   - |
     if [[ $TRAVIS_OS_NAME == windows ]]; then
