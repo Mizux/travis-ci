@@ -48,7 +48,9 @@ script:
       hg --version | grep version || true
       svn --version | grep "\<version\>" || true
       cat /proc/cpuinfo | grep "flags" || true
-      ls -R /usr/lib/jvm || true
+      ls -l /usr/lib/jvm || true
+      echo $JAVA_HOME || true
+      ls -l $JAVA_HOME || true
     fi
   - |
     if [[ $TRAVIS_OS_NAME == windows ]]; then
