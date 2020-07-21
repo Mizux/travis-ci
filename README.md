@@ -2,7 +2,7 @@
 [![Build Status][travis_status]][travis_link]
 [![Build Status][appveyor_status]][appveyor_link]
 
-[github_status]: https://github.com/Mizux/inspect-ci/workflows/C++%20CI/badge.svg
+[github_status]: https://github.com/Mizux/inspect-ci/workflows/CI/badge.svg
 [github_link]: https://github.com/Mizux/inspect-ci/actions
 
 [travis_status]: https://travis-ci.com/Mizux/inspect-ci.svg?branch=master

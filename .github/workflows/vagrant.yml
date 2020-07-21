@@ -1,0 +1,32 @@
+name: Vagrant
+
+on: [push, pull_request]
+
+jobs:
+  build-linux:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: vagrant
+      run: vagrant --version
+    - name: virtualbox
+      run: virtualbox --help
+
+  build-windows:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: vagrant
+      run: vagrant --version
+    - name: virtualbox
+      run: virtualbox --help
+
+  build-osx:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: vagrant
+      run: vagrant --version
+    - name: virtualbox
+      run: virtualbox --help
+
