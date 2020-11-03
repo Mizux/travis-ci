@@ -3,5 +3,7 @@
 FROM mcr.microsoft.com/windows:1809 AS env
 LABEL maintainer="mizux.dev@gmail.com"
 
-RUN Get-ChildItem Env:
+RUN ls
+RUN pwd
+RUN env
 RUN cmake -version
