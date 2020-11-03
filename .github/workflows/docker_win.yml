@@ -21,7 +21,7 @@ jobs:
     - name: docker info
       run: docker info
     - name: Pull image
-      run: docker pull mcr.microsoft.com/windows:2009
+      run: docker pull mcr.microsoft.com/windows:1809
     - name: Build image
       run: docker build -f win.Dockerfile .
 
