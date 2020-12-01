@@ -22,16 +22,18 @@ jobs:
     - name: Clang
       run: clang --version
     - name: Python
-      run: python --version
+      run: |
+        python --version
+        python -m site --user-base
     - name: Python 3
-      run: python3 --version
+      run: |
+        python3 --version
+        python3 -m site --user-base
     - name: Python3 mypy-protobuf
       run: python3 -m pip install --user mypy-protobuf
-    - name: Python3 mypy-protobuf location
-      run: python3 -m pip show mypy-protobuf
     - name: Add path
       run: echo "$HOME/.local/bin" >> $GITHUB_PATH
-    - name: Protoc-gen-mypy location
+    - name: Check protoc-gen-mypy location
       run: which protoc-gen-mypy
     - name: CPU Flags
       run: cat /proc/cpuinfo | grep "flags"
@@ -47,14 +49,14 @@ jobs:
     - name: CMake
       run: cmake -version
     - name: Python
-      run: python --version
+      run: |
+        python --version
+        python -m site --user-base
     - name: Python mypy-protobuf
       run: python -m pip install --user mypy-protobuf
-    - name: Python mypy-protobuf location
-      run: python -m pip show mypy-protobuf
     - name: Add path
       run: echo "$((Get-Item ~).FullName)/appdata/roaming/python/python37/Scripts" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-    - name: Protoc-gen-mypy location
+    - name: Check protoc-gen-mypy location
       run: which protoc-gen-mypy
 
   build-osx:
@@ -76,16 +78,18 @@ jobs:
     - name: Clang
       run: clang --version
     - name: Python
-      run: python --version
+      run: |
+        python --version
+        python -m site --user-base
     - name: Python 3
-      run: python3 --version
+      run: |
+        python3 --version
+        python3 -m site --user-base
     - name: Python3 mypy-protobuf
       run: python3 -m pip install --user mypy-protobuf
-    - name: Python3 mypy-protobuf location
-      run: python3 -m pip show mypy-protobuf
     - name: Add path
       run: echo "$HOME/Library/Python/3.9/bin" >> $GITHUB_PATH
-    - name: Protoc-gen-mypy location
+    - name: Check protoc-gen-mypy location
       run: which protoc-gen-mypy
     - name: CPU Flags
       run: "sysctl -a | grep machdep.cpu.features | cut -f2 -d: | tr . _"
