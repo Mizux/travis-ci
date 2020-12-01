@@ -14,6 +14,9 @@ install:
 
 before_build:
   - git --version
+  - set PATH=C:\Python38-x64;%PATH%
+  - python -V
+  - python -m site --user-base
 
 build_script:
   - cmake -version
