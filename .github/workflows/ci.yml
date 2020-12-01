@@ -22,9 +22,13 @@ jobs:
     - name: Clang
       run: clang --version
     - name: Python
-      run: python --version
+      run: |
+        python --version
+        python -m site --user-base
     - name: Python 3
-      run: python3 --version
+      run: |
+        python3 --version
+        python3 -m site --user-base
     - name: Python3 mypy-protobuf
       run: python3 -m pip install --user mypy-protobuf
     - name: Python3 mypy-protobuf location
@@ -47,7 +51,9 @@ jobs:
     - name: CMake
       run: cmake -version
     - name: Python
-      run: python --version
+      run: |
+        python --version
+        python -m site --user-base
     - name: Python mypy-protobuf
       run: python -m pip install --user mypy-protobuf
     - name: Python mypy-protobuf location
@@ -76,9 +82,13 @@ jobs:
     - name: Clang
       run: clang --version
     - name: Python
-      run: python --version
+      run: |
+        python --version
+        python -m site --user-base
     - name: Python 3
-      run: python3 --version
+      run: |
+        python3 --version
+        python3 -m site --user-base
     - name: Python3 mypy-protobuf
       run: python3 -m pip install --user mypy-protobuf
     - name: Python3 mypy-protobuf location
