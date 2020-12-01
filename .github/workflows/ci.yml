@@ -25,6 +25,14 @@ jobs:
       run: python --version
     - name: Python 3
       run: python3 --version
+    - name: Python3 mypy-protobuf
+      run: python3 -m pip install --user mypy-protobuf
+    - name: Python3 mypy-protobuf location
+      run: python3 -m pip show mypy-protobuf
+    - name: Add path
+      run: echo "$HOME/.local/bin" >> $GITHUB_PATH
+    - name: Protoc-gen-mypy location
+      run: which protoc-gen-mypy
     - name: CPU Flags
       run: cat /proc/cpuinfo | grep "flags"
 
@@ -42,8 +50,12 @@ jobs:
       run: python --version
     - name: Python mypy-protobuf
       run: python -m pip install --user mypy-protobuf
-    - name: Python location
+    - name: Python mypy-protobuf location
       run: python -m pip show mypy-protobuf
+    - name: Add path
+      run: echo "$((Get-Item ~).FullName)/appdata/roaming/python/python37/Scripts" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+    - name: Protoc-gen-mypy location
+      run: which protoc-gen-mypy
 
   build-osx:
     runs-on: macos-latest
@@ -67,6 +79,14 @@ jobs:
       run: python --version
     - name: Python 3
       run: python3 --version
+    - name: Python3 mypy-protobuf
+      run: python3 -m pip install --user mypy-protobuf
+    - name: Python3 mypy-protobuf location
+      run: python3 -m pip show mypy-protobuf
+    - name: Add path
+      run: echo "$HOME/Library/Python/3.9/bin" >> $GITHUB_PATH
+    - name: Protoc-gen-mypy location
+      run: which protoc-gen-mypy
     - name: CPU Flags
       run: "sysctl -a | grep machdep.cpu.features | cut -f2 -d: | tr . _"
 
