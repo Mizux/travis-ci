@@ -40,6 +40,10 @@ jobs:
       run: cmake -version
     - name: Python
       run: python --version
+    - name: Python mypy-protobuf
+      run: python -m pip install --user mypy-protobuf
+    - name: Python location
+      run: python -m pip show mypy-protobuf
 
   build-osx:
     runs-on: macos-latest
