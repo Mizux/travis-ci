@@ -17,6 +17,7 @@ before_build:
   - set PATH=C:\Python38-x64;%PATH%
   - python -V
   - python -m site --user-base
+  - dir C:\Users\appveyor\AppData\Roaming\Python
 
 build_script:
   - cmake -version
