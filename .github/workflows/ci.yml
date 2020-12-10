@@ -10,7 +10,7 @@ jobs:
     - name: env
       run: env
     - name: Update PATH
-        echo "$HOME/.local/bin" >> $GITHUB_PATH
+      run: echo "$HOME/.local/bin" >> $GITHUB_PATH
     - name: Git
       run: git --version
     - name: CMake
@@ -34,9 +34,9 @@ jobs:
         python3 --version
         python3 -m site --user-base
     - name: Java
-        mvn --version
+      run: mvn --version
     - name: .NET
-        dotnet --info
+      run: dotnet --info
 
   build-windows:
     runs-on: windows-latest
@@ -55,9 +55,9 @@ jobs:
         python --version
         python -m site --user-base
     - name: Java
-        mvn --version
+      run: mvn --version
     - name: .NET
-        dotnet --info
+      run: dotnet --info
 
   build-osx:
     runs-on: macos-latest
@@ -90,7 +90,7 @@ jobs:
         python3 --version
         python3 -m site --user-base
     - name: Java
-        mvn --version
+      run: mvn --version
     - name: .NET
-        dotnet --info
+      run: dotnet --info
 
